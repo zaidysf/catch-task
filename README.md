@@ -2,6 +2,14 @@
 
 This applications are built for [catch.com.au](https://catch.com.au).
 
+## Console Version
+
+![console](https://raw.githubusercontent.com/zaidysf/catch-task/main/public/console-ss.png)
+
+## Web Version
+
+![web](https://raw.githubusercontent.com/zaidysf/catch-task/main/public/web-ss.png)
+
 ## Requirements
 
 * PHP `>= 7.3`
