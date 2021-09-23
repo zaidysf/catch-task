@@ -1,5 +1,6 @@
 # CATCH TASK
 
+Catch Task is an application that focusing on exporting json from API to a CSV File that will be validated by csvlint.io.
 This applications are built for [catch.com.au](https://catch.com.au).
 
 ## Console Version
@@ -9,6 +10,13 @@ This applications are built for [catch.com.au](https://catch.com.au).
 ## Web Version
 
 ![web](https://raw.githubusercontent.com/zaidysf/catch-task/main/public/web-ss.png)
+
+# Table of Content
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Basic Usage](#basic-usage)
+- [Testing](#testing)
+- [Third Party](#third-party)
 
 ## Requirements
 
@@ -36,18 +44,34 @@ This applications are built for [catch.com.au](https://catch.com.au).
 
 * MySQL/MariaDB
 
+## Introduction
+
+Catch task has 2 ways to access
+
+* via Console
+
+    In console, we can access it directly via terminal, we can see list of commands by using below command
+    ```
+    php artisan list
+    ```
+    and see at `order` part
+
+* via Web
+
+    In web, we can access it via our favorite browser. By default, default host will show us the list of exported order
+
 ## Installation
 
 * Clone this repository
 
 * Copy .env.example to `.env.testing` and `.env`
 
-* Change values of your `.env.testing` and `.env` as necessary
+* Change values of our `.env.testing` and `.env` as necessary
 (like redis, db and order source file)
 
-* Start your Redis Server
+* Start our Redis Server
 
-* Start your MySQL/MariaDB Server
+* Start our MySQL/MariaDB Server
 
 * Run this command to install dependencies, generate key for laravel and do database migration
     ```
@@ -59,7 +83,7 @@ This applications are built for [catch.com.au](https://catch.com.au).
     php artisan queue:work
     ```
 
-* Serve the application by using your own webserver or run below command
+* Serve the application by using our own webserver or run below command
     ```
     php artisan serve
     ```
@@ -72,6 +96,31 @@ This applications are built for [catch.com.au](https://catch.com.au).
     // since this app using queue feature (using redis as the driver), you can see list of queue here
     - {HOST}/
     ```
+
+## Basic Usage
+
+Before do anything below, please ensure that you have set `ORDER_EXPORT_SOURCE_FILE` in your `.env` file correctly.
+
+* Console
+
+Open our terminal and run one of below commands
+
+ Commands                            | Parameter Description       
+:------------------------------------|:----------------------------
+ php artisan order:export            |                             
+ php artisan order:csv-validate {id} | Get the{id} from order:list 
+ php artisan order:list              |                             
+
+* Web
+
+Open our web browser and access one of below links
+
+ Links         | Description                    
+:--------------|:------------------------------
+ {host}/       | To show list of exported order 
+ {host}/export | To export json to csv          
+
+## Testing
 
 * For testing, you can run below command
     ```
