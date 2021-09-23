@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+// Artisan::command('order:export', function ($user) {
+//     $this->info("Export started!");
+// })->purpose('Export response of API to csv file');;
+// Artisan::command('order:list')->purpose('Show list of exported order');
