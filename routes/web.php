@@ -16,4 +16,3 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [OrderController::class, 'index']);
 Route::get('/export', [OrderController::class, 'export']);
-Route::get('/validate/{id}', [OrderController::class, 'validateCsv']);

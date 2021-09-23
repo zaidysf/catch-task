@@ -55,17 +55,4 @@ class OrderController extends Controller
             ]
         );
     }
-
-    public function validateCsv($id): string
-    {
-        $check = QueueExportFile::find($id);
-        if ($check) {
-            $validate = Http::get($check->csvlint_url.'.json')['package']['validations'];
-            if (empty($validate)) {
-                return "Your csv file is still validating, please try again later";
-            } else {
-                return $validate[0]['state'];
-            }
-        }
-    }
 }

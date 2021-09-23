@@ -14,7 +14,7 @@
                 <tr>
                     <td>{{ $v->processed_date }}</td>
                     <td><a href="/{{ $v->file_url }}">download</a></td>
-                    <td><a href="/validate/{{ $v->id }}" target="_blank">validate</a></td>
+                    <td><a href="{{ $v->csvlint_url }}" target="_blank">validate</a></td>
                     <td>{{ $v->statusName }}</td>
                 </tr>
             @endforeach
